@@ -89,7 +89,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // パララックス
     if (heroImage) {
-      heroImage.style.backgroundPositionY = `${currentScroll * 0.3}px`;
+      const offset = Math.min(currentScroll * 0.1, 150); // 最大100pxまで移動
+      heroImage.style.objectPosition = `center calc(70% - ${offset}px)`;
     }
 
     // ロゴフェード
