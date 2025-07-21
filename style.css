@@ -20,13 +20,23 @@
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
-
   /* ヘッダーが表示される状態 */
   .site-header.visible {
     top: 0; /* 画面内に表示 */
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .site-header.visible .logo {
+    color: #2a4d32;
+  }
+
+  .site-header.visible .hamburger-line {
+    background-color: #2a4d32;
   }
 
   /* ヘッダーが非表示になる状態を削除 */
@@ -42,6 +52,7 @@
   color: #2a4d32;
   text-align: center;
   line-height: 1.4;
+  transition: color 0.6s ease;
 }
 
 /* ハンバーガーメニュー */
@@ -60,7 +71,6 @@
 
 /* ナビゲーション */
 .global-nav {
-  display: none;
   position: absolute;
   top: 60px;
   right: 0;
@@ -71,7 +81,19 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.global-nav.open {
+  opacity: 1;
+  max-height: 500px;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .nav-list a {
@@ -97,16 +119,8 @@
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: center; /* ロゴを中央に配置 */
-      padding: 0.8rem 1.2rem;
-      position: relative;
-    }
 
     .global-nav {
-        display: none;
         position: static; /* ← absoluteからstaticに */
         width: 100%;
         background: white;
@@ -129,8 +143,6 @@
     display: none; /* PC画面では非表示 */
   }
 }
-
-
 /* スライドショーのスタイル */
 .carousel-container {
     position: relative;
@@ -226,6 +238,9 @@
     text-align: center;
     color: white;
     overflow: hidden;
+    background-attachment: fixed; /* パララックス効果を有効化 */
+    background-position: center;
+    background-size: cover;
   }
   
   .hero-img {
@@ -235,10 +250,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 70%; /* ← ここだけ変える */
     z-index: 0;
-    animation: none;
-    transition: transform 6s ease;
   }
+
   
   @keyframes zoomHero {
     0% {
@@ -248,17 +263,6 @@
       transform: scale(1.05);
     }
   }  
-  
-  .overlay {
-    position: relative;
-    z-index: 1;
-  }
-  
-  
-  .hero-image h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
 
   /* カルーセル */
   .carousel-container {
@@ -368,6 +372,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 1s ease;
 }
 
 .intro-logo {
@@ -378,12 +383,36 @@
   font-size: 2.8rem;
   margin-bottom: 0.5rem;
   color: black;
+  line-height: 1.5;
+
+  font-family: 'Noto Serif JP', serif; /* 念のため明示 */
+  opacity: 0;
+  transform: translateZ(0); /* ← GPU描画促進 */
+  animation: fadeInBlur 1.2s ease both; /* ← forwards → both に変更 */
+  animation-delay: 0.3s;
+  will-change: opacity, filter, transform; /* 最適化 */
 }
 
-.intro-logo p {
-  font-size: 1.2rem;
+.intro-sub {
+  font-size: 1.1rem;
   color: black;
   margin: 0;
+
+  opacity: 0;
+  animation: fadeInBlur 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+@keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ヘッダー内ロゴエリア */
@@ -580,7 +609,12 @@
 /* 動物アイコンのスタイル */
 .animal-icons {
   display: flex;
-  gap: 60px;
+  justify-content: center; /* ←中央揃え */
+  align-items: center;
+  gap: 60px; /* アイコン間の余白はお好みで */
+  margin-top: 20px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .hamburger:hover {
@@ -592,7 +626,7 @@
   height: 5px;
   background-color: #2a4d32;
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.6s ease;
 }
 
 .hamburger.open .hamburger-line:nth-child(1) {
@@ -607,11 +641,6 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.global-nav.open {
-  display: flex;
-  transform: translateY(0);
-  opacity: 1;
-}
 
 .nav-list {
   list-style: none;
@@ -622,17 +651,18 @@
   gap: 1rem;
 }
 
-.nav-list a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
 
-.nav-list a:hover {
-  color: #66a06f;
+/* メニューを閉じるボタン */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #2a4d32;
+  width: 100%;
+  text-align: center;
 }
-
 
 .animal {
     text-align: center;
@@ -645,11 +675,6 @@
     height: auto;
     max-width: 200px;
     margin-bottom: 10px;
-}
-
-.animal img:hover {
-    transform: scale(1.05); /* ホバー時に拡大 */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
 }
 
 .animal p {
@@ -693,14 +718,9 @@
 }
 
 .insurance-logos img {
-    max-width: 200px; /* ロゴの最大幅を設定 */
+    max-width: 300px; /* ロゴの最大幅を設定 */
     height: auto; /* アスペクト比を維持 */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
-}
-
-.insurance-logos img:hover {
-    transform: scale(1.1); /* ホバー時に拡大 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* ホバー時に影を追加 */
 }
 
 /* スマホ対応 */
@@ -727,16 +747,13 @@
         align-items: center;
         text-align: center;
     }
-
+    
     .footer-nav ul {
         flex-direction: column;
         gap: 0.5rem;
     }
     .global-nav.open {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+      max-height: 500px;
     }
 
     .hamburger {
