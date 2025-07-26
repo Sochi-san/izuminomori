@@ -12,7 +12,7 @@
   /* ヘッダーの初期状態（非表示） */
   .site-header {
     position: fixed;
-    top: -100px;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
@@ -21,7 +21,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-100%);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
   /* ヘッダーが表示される状態 */
@@ -46,23 +46,24 @@
 
 /* ロゴのスタイル */
 .logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   color: #333;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .logo-sub {
-  font-size: 1rem; /* 日本語より一回り小さいサイズ */
+  font-size: 0.9rem; /* 日本語より一回り小さいサイズ */
   color: #666;
   font-weight: 400;
   display: block;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   text-align: center;
   opacity: 0; /* 初期状態で非表示 */
   transition: opacity 0.6s ease; /* スクロール時の表示アニメーション */
 }
-
 /* ハンバーガーメニュー */
 .hamburger {
   display: flex;
@@ -84,8 +85,8 @@
   right: 0;
   width: 70%;
   height: auto;
-  max-height: 50vh;
-  overflow-y: auto;
+  max-height: none; 
+  overflow-y: visible; 
   background: rgba(255, 255, 255, 0.9);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -585,6 +586,10 @@
 /* 院長セクション全体のスタイル */
 .director {
     background-color: #f9f9f9;
+    background-image: url('img/tree_shadow_transparent.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 40px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
