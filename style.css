@@ -333,6 +333,42 @@
     transition: object-position 0.2s ease-out;
     z-index: 0;
   }
+  .hero-text {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    max-width: 95%;
+    line-height: 1.5;
+  }
+
+  .desktop-br {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .hero-text {
+      font-size: 1.1rem;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-text {
+      font-size: 2.2rem;
+      top: 3rem;
+      right: 3rem;
+      left: auto;
+      transform: none;
+      text-align: right;
+    }
+
+    .desktop-br {
+      display: block;
+    }
+  }
   
   @keyframes zoomHero {
     0% {
@@ -519,6 +555,9 @@
   padding: 0;
 }
 
+.timetable-wrapper {
+  overflow-x: auto;          /* スマホで横スクロール */
+}
 /* 診療時間テーブルのスタイル */
 .timetable {
     width: 100%;
@@ -530,8 +569,9 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    table-layout: fixed;        /* 幅がはみ出さないよう固定 */
-    box-sizing: border-box;     /* 枠線を含めて計算 */
+    table-layout: fixed;
+    box-sizing: border-box;
+    min-width: 600px;         
 }
 
 .timetable thead {
@@ -816,12 +856,13 @@ close-btn:hover {
 @media (max-width: 768px) {
     .timetable {
         font-size: 0.9rem;
+        table-layout: fixed;    /* スマホでも枠をはみ出さない */
+        box-sizing: border-box;
     }
 
-    .timetable th, .timetable td {
-        padding: 8px 10px;
+    .timetable-wrapper {
+        -webkit-overflow-scrolling: touch; /* スクロール操作を滑らかに */
     }
-
     .director-profile {
         flex-direction: column;
         align-items: center;

@@ -7,6 +7,7 @@
   <title>泉の森ペットクリニック</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
   <body>
     <div id="intro-screen">
@@ -34,7 +35,7 @@
             <li><a href="#hours">診療時間</a></li>
             <li><a href="#access">アクセス</a></li>
             <li class="social-icon">
-              <a href="https://www.instagram.com" aria-label="Instagram">
+              <a href="https://www.instagram.com/izuminomori_petclinic/" aria-label="Instagram" target="_blank" rel="noopener">
                 <img src="img/Instagram_icon_black.png" alt="Instagram">
               </a>
             </li>
@@ -50,7 +51,10 @@
     <section class="hero" id="about">
       <div class="hero-image">
         <img src="img/S__31555632_0.jpg" alt="Hero Image" class="hero-img">
-      </div>
+        <p class="hero-text">大切な家族であるワンちゃん、ネコちゃんと
+          <br class="desktop-br">
+          少しでも、長く一緒に過ごせるように
+        </p>
     </section>    
   
     <section class="slider">
@@ -156,6 +160,7 @@
 <section class="hours" id="hours">
   <div class="container">
     <h2 class="section-title">診療時間</h2>
+    <div class="timetable-wrapper">
     <table class="timetable">
       <thead>
         <tr>
@@ -192,13 +197,14 @@
         </tr>
       </tbody>
     </table>
+    </div>    
     <p class="note">※ 診療の受付は終了時間の30分前までとなります。</p>
     </div>
   </section>
   
   <section class="reservation" id="reservation">
     <div class="container">
-      <h2 class="section-title">予約状況カレンダー</h2>
+      <h2 class="section-title">診療日カレンダー</h2>
       <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&title=%E4%BC%91%E8%A8%BA%E6%97%A5&showTz=0&src=aXp1bWlub21vcmkucGV0Y2xpbmljQGdtYWlsLmNvbQ&color=%23039be5" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </section>
 
@@ -241,7 +247,9 @@
           </nav>
         </div>
         <div class="footer-sns">
-          <a href="#" aria-label="Instagram"><img src="img/Instagram_icon_white.png" alt="Instagram"></a>
+          <a href="https://www.instagram.com/izuminomori_petclinic/" aria-label="Instagram" target="_blank" rel="noopener">
+            <img src="img/Instagram_icon_white.png" alt="Instagram">
+          </a>
         </div>
         <p class="copyright">
           &copy; 2025 泉の森ペットクリニック. All Rights Reserved.
