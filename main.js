@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   // 要素取得
-  const aboutContent = document.getElementById('about-content');
   const header = document.querySelector('.site-header');
   const hamburger = document.querySelector('.hamburger');
   const heroLogo = document.querySelector('.hero-logo');
@@ -37,52 +36,34 @@ document.addEventListener('DOMContentLoaded', function () {
     heroImage.style.animation = 'zoomHero 6s ease forwards';
   }
 
-  // aboutセクションのフェードイン
-  if (aboutContent) {
-    const fadeInObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          aboutContent.classList.add('visible');
-          fadeInObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    fadeInObserver.observe(aboutContent);
-  }
-
-  // スライドショー制御
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-  let currentSlide = 0;
-
-  function showSlide(index) {
+    // スライダー制御
+    const slides = document.querySelectorAll('.slider-container .slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+  
+    function showSlide(index) {
       slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
+        slide.classList.toggle('active', i === index);
       });
-  }
-
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
-
-  if (prev && next && slides.length > 0) {
-      prev.addEventListener('click', () => {
-          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-          showSlide(currentSlide);
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
       });
-
-      next.addEventListener('click', () => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          showSlide(currentSlide);
+    }
+  
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentSlide = i;
+        showSlide(currentSlide);
       });
-
-      setInterval(() => {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          showSlide(currentSlide);
-      }, 5000); // 5秒ごとに自動スライド
-
-      showSlide(currentSlide); // 初期表示
-  }
-
+    });
+  
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000); // 5秒ごとに自動切り替え
+  
+    showSlide(currentSlide);
+  
   // スクロール処理（パララックス・ロゴフェード・ヘッダー表示）
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;

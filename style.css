@@ -1,14 +1,6 @@
-#about-content
-  {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  #about-content.visible 
-  {
-    opacity: 1;
-    transform: translateY(0);
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+} 
   /* ヘッダーの初期状態（非表示） */
   .site-header {
     position: fixed;
@@ -69,14 +61,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 7px;
   width: 40px;
-  height: 32px;
+  height: 40px;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1001;
   transition: transform 0.3s ease;
+}
+.hamburger.open {
+  gap: 0; 
 }
 /* ナビゲーション */
 .global-nav {
@@ -525,21 +519,6 @@
   padding: 0;
 }
 
-/* Aboutセクション */
-.about-title {
-  text-align: center;
-  border: none;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.about-description {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
 /* 診療時間テーブルのスタイル */
 .timetable {
     width: 100%;
@@ -551,6 +530,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    table-layout: fixed;        /* 幅がはみ出さないよう固定 */
+    box-sizing: border-box;     /* 枠線を含めて計算 */
 }
 
 .timetable thead {
@@ -713,14 +694,16 @@
 .hamburger-line {
   display: block;
   width: 100%;
-  height: 6px;
+  height: 4px;
+  margin: 4px 0;
   background-color: #2a4d32;
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.6s ease;
+  transform-origin: center;
 }
 
 .hamburger.open .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translate(8.5px, 8.5px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger.open .hamburger-line:nth-child(2) {
@@ -728,7 +711,7 @@
 }
 
 .hamburger.open .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translate(8.5px, -8.5px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
   .close-btn {
@@ -806,6 +789,28 @@ close-btn:hover {
     height: auto; /* アスペクト比を維持 */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
 }
+/* 予約状況カレンダー */
+.reservation {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.reservation iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  border: 0;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .timetable {
+      font-size: 0.9rem;
+  }
+
+  .reservation iframe {
+      height: 500px;
+  }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
@@ -844,7 +849,8 @@ close-btn:hover {
         display: block; /* ハンバーガーメニューを表示 */
         position: absolute;
         right: 3rem; /* ハンバーガーメニューを右端に配置 */
-        top: 1rem; /* ハンバーガーメニューの位置を調整 */
+        top: 50%; /* 縦方向の中央に配置 */
+        transform: translateY(-50%); /* 中央寄せ */
         z-index: 1001; /* ハンバーガーメニューを最前面に */
     }
 
@@ -857,9 +863,87 @@ close-btn:hover {
         gap: 1rem;
     }
 
+    .animal-icons {
+      gap: 20px;
+  }
+
 .nav-list .social-icon img {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
+}
+}
+
+/* ---------------- Slider ---------------- */
+.slider {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.slider-container .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slider-container .slide.active {
+  opacity: 1;
+  position: absolute;
+}
+
+.slider-container .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #66a06f;
+}
+
+@media (max-width: 768px) {
+  .slide-caption {
+    font-size: 1.2rem;
+  }
 }
