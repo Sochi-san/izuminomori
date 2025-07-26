@@ -12,7 +12,7 @@
   /* ヘッダーの初期状態（非表示） */
   .site-header {
     position: fixed;
-    top: 0;
+    top: -100px;
     left: 0;
     width: 100%;
     z-index: 999;
@@ -20,8 +20,8 @@
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
-    opacity: 0;
-    transform: translateY(-20px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
   /* ヘッダーが表示される状態 */
@@ -46,13 +46,21 @@
 
 /* ロゴのスタイル */
 .logo {
-  font-size: 1.5rem; 
-  font-weight: 700;
-  margin: 0;
-  color: #2a4d32;
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
-  line-height: 1.4;
-  transition: color 0.6s ease;
+  color: #333;
+}
+
+.logo-sub {
+  font-size: 1rem; /* 日本語より一回り小さいサイズ */
+  color: #666;
+  font-weight: 400;
+  display: block;
+  margin-top: 0.5rem;
+  text-align: center;
+  opacity: 0; /* 初期状態で非表示 */
+  transition: opacity 0.6s ease; /* スクロール時の表示アニメーション */
 }
 
 /* ハンバーガーメニュー */
@@ -107,7 +115,7 @@
 .global-nav.open .nav-list li:nth-child(7) { animation-delay: 0.7s; } /* 閉じるボタン */
 
 .nav-list li {
-  opacity: 0;
+  opacity: 1;
 }
 
 .nav-list {
@@ -153,7 +161,9 @@
     display: flex;
     justify-content: center;
   }
-
+  .nav-list li {
+    opacity: 0;
+  }
 }
 
 @media (min-width: 768px) {

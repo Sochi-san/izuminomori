@@ -103,8 +103,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // ヘッダー表示制御
     if (currentScroll > 50) {
       header.classList.add('visible');
+      const logoSub = document.querySelector('.logo-sub'); // 英語部分の要素を取得
+      if (logoSub) {
+        logoSub.style.opacity = '1'; // 英語部分を表示
+      }
     } else {
       header.classList.remove('visible');
+      const logoSub = document.querySelector('.logo-sub'); // 英語部分の要素を取得
+      if (logoSub) {
+        logoSub.style.opacity = '0'; // 英語部分を非表示
+      }
     }
   });
 
