@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (introScreen) {
     // 日本語タイトルを設定
     if (introTitle) {
-      introTitle.innerHTML = "泉の森<wbr>ペットクリニック";
+      introTitle.innerHTML =
+        '泉の森<br class="mobile-br">ペットクリニック';
     }
 
     setTimeout(() => {
