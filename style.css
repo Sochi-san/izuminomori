@@ -353,10 +353,13 @@
   @media (max-width: 767px) {
     .hero-text {
       font-size: 1.2rem;
-      top: 35%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+      max-width: none;
+      width: 100%;
+      padding: 0 1rem;
     }
   }
 
@@ -575,13 +578,12 @@
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  min-width: 600px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .timetable thead {
-  background-color: #4a7c59;
-  color: #fff;
+  background-color: #66a06f;
+  color: #ffffff;
 }
 
 .timetable th,
@@ -591,11 +593,13 @@
 }
 
 .timetable th {
-  background-color: #f0f0f0;
+  background-color: #2e7d32;
   font-weight: bold;
   font-size: 1rem;
 }
-
+.timetable tbody th {
+  color: #fff;
+}
 .timetable td.open {
   color: #2e7d32;
   font-weight: bold;
@@ -843,6 +847,9 @@ close-btn:hover {
   text-align: center;
   margin: 40px 0;
 }
+.reservation .section-title {
+  text-align: left;
+}
 
 .reservation iframe {
   width: 100%;
@@ -857,7 +864,12 @@ close-btn:hover {
     table-layout: fixed;    /* スマホでも枠をはみ出さない */
     box-sizing: border-box;
   }
-
+  .timetable th:first-child {
+    width: 6em;
+  }
+  .timetable th:first-child {
+    width: 6em;             /* 時間帯のセルがはみ出さないよう調整 */
+  }
   .reservation iframe {
     height: 500px;
   }
@@ -923,6 +935,7 @@ close-btn:hover {
     margin-top: 1rem;
   }
 }
+/* ---------------- Sunlight anime ---------------- */
 
 /* ---------------- Slider ---------------- */
 .slider {
