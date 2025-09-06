@@ -114,6 +114,21 @@ document.addEventListener('DOMContentLoaded', function () {
           hamburger.setAttribute('aria-expanded', 'false');
       });
   }
+// Fade-in animation on scroll for sections
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('section').forEach((section) => {
+    observer.observe(section);
+  });
 
 });
 

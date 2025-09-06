@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="北海道千歳市の泉の森ペットクリニック公式サイト。犬猫の診療案内や診療時間、アクセス情報を掲載しています。">
   <title>泉の森ペットクリニック</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -57,6 +58,8 @@
       </div>
     </header>
   
+
+
     <section class="hero" id="about">
       <div class="hero-image">
         <div class="sunlight"></div>
@@ -69,6 +72,68 @@
         </p>
       </div>
     </section>  
+
+    <section class="clinic-info" id="info">
+  <div class="container clinic-info__inner">
+    <!-- 左側：診療情報 -->
+    <div class="clinic-info__details">
+      <h2 class="section-title">当院情報</h2>
+
+      <div class="clinic-info__contact">
+        <p class="clinic-info__tel">
+          ご予約・お問い合わせ<br>
+          <a href="tel:0123456789">📞 012-345-6789</a>
+        </p>
+        <p class="clinic-info__address">
+          〒066-0057 北海道千歳市若草1-18-5<br>
+          駐車場あり（4台完備）・バリアフリー設計
+        </p>
+      </div>
+
+      <table class="timetable">
+        <thead>
+          <tr>
+            <th>診療時間</th>
+            <th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th><th>祝</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9:00〜12:00</td>
+            <td>●</td><td>●</td><td>-</td><td>●</td><td>●</td><td>●</td><td>●</td><td>-</td>
+          </tr>
+          <tr>
+            <td>16:00〜19:00</td>
+            <td>●</td><td>●</td><td>-</td><td>●</td><td>●</td><td>●</td><td>-</td><td>-</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">休診日：水曜・日曜午後・祝日<br>
+        ※受付は終了時間の30分前まで</p>
+
+<div class="clinic-info__icons">
+  <div class="icon-box">
+    <span class="icon-emoji">🚗</span>
+    <p>敷地内<br>駐車場4台</p>
+  </div>
+  <div class="icon-box">
+    <span class="icon-emoji">📅</span>
+    <p>土曜日<br>診療</p>
+  </div>
+  <div class="icon-box">
+    <span class="icon-emoji">♿</span>
+    <p>バリアフリー<br>設計</p>
+  </div>
+</div>
+
+    <!-- 右側：Google Map -->
+    <div class="clinic-info__map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.4354909289273!2d141.60236891101704!3d42.80028247103507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f752129d1892b7b%3A0x4901c21e5ae3f5c3!2sIzuminomori%20Animal%20Clinic!5e0!3m2!1sen!2sjp!4v1753962739647!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             </iframe>
+    </div>
+  </div>
+</section>
+
   
     <section class="slider">
       <div class="slider-container">
@@ -92,46 +157,53 @@
       </div>
     </section>
 
-  <section class="director" id="director">
-  <div class="container">
-    <h2 class="section-title">院長紹介</h2>
-    <div class="director-profile">
-      <div class="director-image">
-        <img src="img/S__31555639_0.jpg" alt="院長の写真">
-        <p class="director-name"><strong>内山 博貴</strong><br>Uchiyama Hiroki</p>
-      </div>
-      <div class="director-text">
-        <p class="director-intro">
-          この度、千歳市泉沢向陽台地域に泉の森ペットクリニックを開院した内山博貴です。<br>
-          私は25年間、神奈川県川崎市で開業医として、小動物診療に携わってまいりました。<br>
-          川崎市では、多くの動物達と飼い主様との出会いの中で<br>
-          かけがえのない経験をさせていただきました。<br>
-          大好きな北海道に移住を決意し、自然豊かなこの場所に巡り合いました。<br>
-          診療を通じて、飼い主様に寄り添える地域のホームドクターを目指し尽力してまいります。<br>
-          どんな小さなことでもかまいませんので、どうぞお気軽にご相談ください。<br>
-          皆様と大切なご家族である動物達との出会いを心よりお待ちしております。
+<section class="greeting" id="director">
+  <div class="greeting__inner">
+    <!-- 左：テキスト -->
+    <div class="greeting__content">
+      <div class="greeting__header">
+        <span class="badge">院長</span>
+        <p class="name">
+          <strong class="jp">内山 博貴</strong>
+          <span class="en">Hiroki Uchiyama</span>
         </p>
-
-        <div class="director-details">
-          <h3>略歴</h3>
-          <ul>
-            <li>麻布大学卒業</li>
-            <li>獣医師免許取得</li>
-            <li>神奈川県川崎市にて25年間、開業医として小動物診療に従事</li>
-            <li>2025年　北海道千歳市に「泉の森ペットクリニック」開院</li>
-          </ul>
-
-          <h3>所属学会</h3>
-          <ul>
-            <li>日本獣医師会</li>
-            <li>北海道獣医師会</li>
-            <li>北海道小動物獣医師会</li>
-          </ul>
-        </div>
       </div>
+
+      <h2 class="catch">
+        ペットが健康で幸せに<br>動物とご家族に寄り添う診療を
+      </h2>
+
+      <p class="lead">
+        この度、千歳市泉沢向陽台地域に泉の森ペットクリニックを開院した内山博貴です。25年間、
+        神奈川県川崎市で開業医として小動物診療に携わってまいりました。大好きな北海道に移住を決意し、
+        自然豊かなこの場所に巡り合いました。診療を通じて、飼い主様に寄り添える地域のホームドクターを目指し尽力してまいります。
+        どんな小さなことでもかまいませんので、どうぞお気軽にご相談ください。皆様と大切なご家族である動物達との出会いを心よりお待ちしております。
+      </p>
+
+      <div class="meta">
+        <h3>略歴</h3>
+        <ul>
+          <li>麻布大学卒業</li>
+          <li>獣医師免許取得</li>
+          <li>神奈川県川崎市にて25年間、開業医として小動物診療に従事</li>
+          <li>2025年 北海道千歳市に「泉の森ペットクリニック」開院</li>
+        </ul>
+        <h3>所属学会</h3>
+        <ul>
+          <li>日本獣医師会</li>
+          <li>北海道獣医師会</li>
+          <li>北海道小動物獣医師会</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 右：大きな写真（グラデーションで左へフェード） -->
+    <div class="greeting__photo">
+      <img src="img/S__31555639_0.jpg" alt="院長の写真">
     </div>
   </div>
 </section>
+
 
 <section class="services" id="services">
   <div class="container">
@@ -176,6 +248,7 @@
           <th>金</th>
           <th>土</th>
           <th>日</th>
+          <th>祝</th>
         </tr>
       </thead>
       <tbody>
@@ -188,6 +261,7 @@
           <td class="open">●</td>
           <td class="open">●</td>
           <td class="open">●</td>
+          <td class="closed">-</td>
         </tr>
         <tr>
           <th>16:00-19:00</th>
@@ -198,9 +272,11 @@
           <td class="open">●</td>
           <td class="open">●</td>
           <td class="closed">-</td>
+          <td class="closed">-</td>
         </tr>
       </tbody>
     </table>
+     <p class="note">休診日：水曜・日曜午後・祝日</p>
     <p class="note">※ 診療の受付は終了時間の30分前までとなります。</p>
   </div>
 </section>
@@ -213,7 +289,7 @@
 
   <section class="insurance">
     <div class="container">
-      <h2 class="section-title">動物医療保険取扱病院</h2>
+      <h2 class="section-title">取り扱いペット保険</h2>
       <div class="insurance-logos">
         <div class="insurance-item">
           <img src="img/anicom.png" alt="アニコム損害保険株式会社のロゴ">
