@@ -73,23 +73,29 @@
       </div>
     </section>  
 
-    <section class="clinic-info" id="info">
+<section class="clinic-info" id="info">
   <div class="container clinic-info__inner">
+
     <!-- 左側：診療情報 -->
     <div class="clinic-info__details">
-      <h2 class="section-title">当院情報</h2>
+      <div class="clinic-info__header">
+        <h2 class="clinic-info__logo">
+          泉の森<wbr>ペットクリニック<br>
+          <span class="clinic-info__logo-sub">IZUMINOMORI PET CLINIC</span>
+        </h2>
 
-      <div class="clinic-info__contact">
         <p class="clinic-info__tel">
           ご予約・お問い合わせ<br>
-          <a href="tel:0123456789">📞 012-345-6789</a>
-        </p>
-        <p class="clinic-info__address">
-          〒066-0057 北海道千歳市若草1-18-5<br>
-          駐車場あり（4台完備）・バリアフリー設計
+          <a href="tel:0123297860">📞 0123-29-7860</a>
         </p>
       </div>
 
+      <!-- 住所はヘッダーの“下”に表示 -->
+      <p class="clinic-info__address">
+        〒066-0057 北海道千歳市若草1-18-5
+      </p>
+
+      <!-- 診療時間表 -->
       <table class="timetable">
         <thead>
           <tr>
@@ -108,32 +114,36 @@
           </tr>
         </tbody>
       </table>
+
       <p class="note">休診日：水曜・日曜午後・祝日<br>
         ※受付は終了時間の30分前まで</p>
 
-<div class="clinic-info__icons">
-  <div class="icon-box">
-    <span class="icon-emoji">🚗</span>
-    <p>敷地内<br>駐車場4台</p>
-  </div>
-  <div class="icon-box">
-    <span class="icon-emoji">📅</span>
-    <p>土曜日<br>診療</p>
-  </div>
-  <div class="icon-box">
-    <span class="icon-emoji">♿</span>
-    <p>バリアフリー<br>設計</p>
-  </div>
-</div>
+      <!-- アイコン -->
+      <div class="clinic-info__icons">
+        <div class="icon-box">
+          <span class="icon-emoji">🚗</span>
+          <p>敷地内<br>駐車場</p>
+        </div>
+        <div class="icon-box">
+          <span class="icon-emoji">📅</span>
+          <p>土日<br>診療</p>
+        </div>
+        <div class="icon-box">
+          <span class="icon-emoji">♿</span>
+          <p>バリアフリー<br>設計</p>
+        </div>
+      </div>
+    </div><!-- /.clinic-info__details -->
 
-    <!-- 右側：Google Map -->
+    <!-- 右カラム：地図 -->
     <div class="clinic-info__map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.4354909289273!2d141.60236891101704!3d42.80028247103507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f752129d1892b7b%3A0x4901c21e5ae3f5c3!2sIzuminomori%20Animal%20Clinic!5e0!3m2!1sen!2sjp!4v1753962739647!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-             </iframe>
-    </div>
-  </div>
-</section>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.4354909289273!2d141.60236891101704!3d42.80028247103507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f752129d1892b7b%3A0x4901c21e5ae3f5c3!2sIzuminomori%20Animal%20Clinic!5e0!3m2!1sen!2sjp!4v1753962739647!5m2!1sen!2sjp"
+              style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div><!-- /.clinic-info__map -->
 
+  </div><!-- /.clinic-info__inner -->
+</section>
   
     <section class="slider">
       <div class="slider-container">
@@ -234,52 +244,6 @@
   </div>
 </section>
 
-<section class="hours" id="hours">
-  <div class="container">
-    <h2 class="section-title">診療時間</h2>
-    <table class="timetable">
-      <thead>
-        <tr>
-          <th></th>
-          <th>月</th>
-          <th>火</th>
-          <th>水</th>
-          <th>木</th>
-          <th>金</th>
-          <th>土</th>
-          <th>日</th>
-          <th>祝</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>9:00-12:00</th>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="closed">-</td>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="closed">-</td>
-        </tr>
-        <tr>
-          <th>16:00-19:00</th>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="closed">-</td>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="open">●</td>
-          <td class="closed">-</td>
-          <td class="closed">-</td>
-        </tr>
-      </tbody>
-    </table>
-     <p class="note">休診日：水曜・日曜午後・祝日</p>
-    <p class="note">※ 診療の受付は終了時間の30分前までとなります。</p>
-  </div>
-</section>
   
   <section class="reservation" id="reservation">
     <div class="container">
@@ -301,16 +265,6 @@
       </div>
     </div>
   </section>
-
-<section class="access" id="access">
-  <div class="container">
-    <h2 class="section-title">アクセス</h2>
-    <p>〒066-0057 北海道千歳市若草1-18-5<br>駐車場あり</p>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.4354909289273!2d141.60236891101704!3d42.80028247103507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f752129d1892b7b%3A0x4901c21e5ae3f5c3!2sIzuminomori%20Animal%20Clinic!5e0!3m2!1sen!2sjp!4v1753962739647!5m2!1sen!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
 
 <!-- 以下、フッターは順次追加します -->
 
@@ -335,7 +289,7 @@
           </a>
         </div>
         <p class="copyright">
-          &copy; 2025 泉の森ペットクリニック. All Rights Reserved.
+          &copy; 2025 泉の森ペットクリニック.
         </p>
       </div>
     </div>
