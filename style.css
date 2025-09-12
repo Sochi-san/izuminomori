@@ -740,6 +740,7 @@ section:not(.hero):nth-of-type(odd) {
 }
 .greeting__header{
   display:flex; align-items:center; gap:12px;
+  margin-top: 30px;
   margin-bottom: clamp(12px,1.5vw,16px);
 }
 .badge{
@@ -991,11 +992,6 @@ section:not(.hero):nth-of-type(odd) {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4;
-}
-.icon-box:hover {
-  transform: translateY(-2px);
-  box-shadow: inset 0 0 0 6px rgba(255,255,255,.28),
-              0 8px 18px rgba(0,0,0,.12);
 }
 
 /* 地図（右カラム） */
@@ -1420,7 +1416,9 @@ section.slider {
   padding: 0 !important;
 }
 
-.greeting { padding-top: 0 !important; }
+.greeting { padding-top: 0 !important; 
+  padding-bottom: 0 !important; }
+
 .greeting__inner {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
