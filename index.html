@@ -42,8 +42,6 @@
             <li><a href="#about">当院について</a></li>
             <li><a href="#director">院長紹介</a></li>
             <li><a href="#services">診療案内</a></li>
-            <li><a href="#hours">診療時間</a></li>
-            <li><a href="#access">アクセス</a></li>
             <li class="social-icon">
               <a href="https://www.instagram.com/izuminomori_petclinic/" aria-label="Instagram" target="_blank" rel="noopener">
                 <img src="img/Instagram_icon_black.png" alt="Instagram">
@@ -60,7 +58,7 @@
   
 
 
-    <section class="hero" id="about">
+    <section class="hero">
       <div class="hero-image">
         <div class="sunlight"></div>
         <img src="img/S__31555632_0.jpg" alt="Hero Image" class="hero-img">
@@ -77,7 +75,7 @@
   <div class="container clinic-info__inner">
 
     <!-- 左側：診療情報 -->
-    <div class="clinic-info__details">
+    <div class="clinic-info__details" id="about">
       <div class="clinic-info__header">
         <h2 class="clinic-info__logo">
           泉の森<wbr>ペットクリニック<br>
@@ -129,8 +127,8 @@
           <p>土日<br>診療</p>
         </div>
         <div class="icon-box">
-          <span class="icon-emoji">♿</span>
-          <p>バリアフリー<br>設計</p>
+          <span class="icon-emoji">🏥</span>
+          <p>ペット保険<br>対応</p>
         </div>
       </div>
     </div><!-- /.clinic-info__details -->
@@ -144,28 +142,12 @@
 
   </div><!-- /.clinic-info__inner -->
 </section>
-  
-    <section class="slider">
-      <div class="slider-container">
-        <div class="slide active">
-          <img src="img/S__31555632_0.jpg" alt="slide1">
-          <div class="slide-caption">サンプルテキスト1</div>
-        </div>
-        <div class="slide">
-          <img src="img/S__31555634_0.jpg" alt="slide2">
-          <div class="slide-caption">サンプルテキスト2</div>
-        </div>
-        <div class="slide">
-          <img src="img/S__31555635_0.jpg" alt="slide3">
-          <div class="slide-caption">サンプルテキスト3</div>
-        </div>
-        <div class="dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-    </section>
+
+  <section class="reservation" id="reservation">
+    <div class="container">
+      <h2 class="section-title">診療日カレンダー</h2>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&title=%E4%BC%91%E8%A8%BA%E6%97%A5&showTz=0&src=aXp1bWlub21vcmkucGV0Y2xpbmljQGdtYWlsLmNvbQ&color=%23039be5" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  </section>
 
 <section class="greeting" id="director">
   <div class="greeting__inner">
@@ -207,13 +189,41 @@
       </div>
     </div>
 
-    <!-- 右：大きな写真（グラデーションで左へフェード） -->
     <div class="greeting__photo">
       <img src="img/doctor.jpg" alt="院長の写真">
     </div>
   </div>
 </section>
 
+<section class="photo-marquee" id="gallery">
+  <h2 class="section-title"></h2>
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <figure><img src="img/slide1.jpg" alt="スライド1"></figure>
+      <figure><img src="img/slide2.jpg" alt="スライド2"></figure>
+      <figure><img src="img/slide3.jpg" alt="スライド3"></figure>
+      <figure><img src="img/slide4.jpg" alt="スライド4"></figure>
+      <figure><img src="img/slide5.jpg" alt="スライド5"></figure>
+      <figure><img src="img/slide6.jpg" alt="スライド6"></figure>
+      <figure><img src="img/slide7.jpg" alt="スライド7"></figure>
+      <figure><img src="img/slide8.jpg" alt="スライド8"></figure>
+      <figure><img src="img/slide9.jpg" alt="スライド9"></figure>
+      <figure><img src="img/slide10.jpg" alt="スライド10"></figure>
+      <figure><img src="img/slide1.jpg" alt="スライド1"></figure>
+      <figure><img src="img/slide2.jpg" alt="スライド2"></figure>
+      <figure><img src="img/slide3.jpg" alt="スライド3"></figure>
+      <figure><img src="img/slide4.jpg" alt="スライド4"></figure>
+      <figure><img src="img/slide5.jpg" alt="スライド5"></figure>
+      <figure><img src="img/slide6.jpg" alt="スライド6"></figure>
+      <figure><img src="img/slide7.jpg" alt="スライド7"></figure>
+      <figure><img src="img/slide8.jpg" alt="スライド8"></figure>
+      <figure><img src="img/slide9.jpg" alt="スライド9"></figure>
+      <figure><img src="img/slide10.jpg" alt="スライド10"></figure>
+    </div>
+    <div class="marquee-fade-left"></div>
+    <div class="marquee-fade-right"></div>
+  </div>
+</section>
 
 <section class="services" id="services">
   <div class="container">
@@ -236,20 +246,12 @@
     <div class="medical-services">
       <h3><span class="paw-icon">🐾</span> 診療内容</h3>
       <ul class="services-list">
-          <li>犬猫診療全般</li>
-      </ul>
-    </div>
+           <li><span class="service-icon">🩺</span>全般的な病気やケガに対応</li>
+        <li><span class="service-icon">🏥</span>専門的な検査や治療が必要と判断した場合は、適切な診療先に紹介</li>
       </ul>
     </div>
   </div>
 </section>
-
-  
-  <section class="reservation" id="reservation">
-    <div class="container">
-      <h2 class="section-title">診療日カレンダー</h2>
-      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&title=%E4%BC%91%E8%A8%BA%E6%97%A5&showTz=0&src=aXp1bWlub21vcmkucGV0Y2xpbmljQGdtYWlsLmNvbQ&color=%23039be5" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-  </section>
 
   <section class="insurance">
     <div class="container">
@@ -260,13 +262,10 @@
         </div>
         <div class="insurance-item">
           <img src="img/ipet.png" alt="アイペット損害保険株式会社のロゴ">
-          <p class="insurance-note">※ アイペットは2025年8月16日から対応開始</p>
         </div>
       </div>
     </div>
   </section>
-
-<!-- 以下、フッターは順次追加します -->
 
   <footer class="site-footer">
     <div class="footer-background">
@@ -278,8 +277,6 @@
               <li><a href="#about">当院について</a></li>
               <li><a href="#director">院長紹介</a></li>
               <li><a href="#services">診療案内</a></li>
-              <li><a href="#hours">診療時間</a></li>
-              <li><a href="#access">アクセス</a></li>
             </ul>
           </nav>
         </div>

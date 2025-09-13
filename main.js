@@ -65,6 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
   
     showSlide(currentSlide);
   
+  const marqueeTrack = document.querySelector(".marquee-track");
+  if (marqueeTrack) {
+    const trackWidth = marqueeTrack.scrollWidth / 2;
+    const seconds = Math.max(12, Math.round(trackWidth / 120));
+    marqueeTrack.style.setProperty("--marquee-duration", seconds + "s");
+  }
+  
   // スクロール処理（パララックス・ロゴフェード・ヘッダー表示）
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
